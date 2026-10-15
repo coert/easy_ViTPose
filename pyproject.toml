@@ -1,0 +1,35 @@
+[project]
+name = "easy-vitpose"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "ffmpeg-python>=0.2.0",
+    "filterpy>=1.4.5",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "opencv-python>=5.0.0.93",
+    "pillow>=12.3.0",
+    "scikit-image>=0.26.0",
+    "scipy>=1.18.1",
+    "torch==2.10.0",
+    "torchvision==0.25.0",
+    "tqdm>=4.70.1",
+    "ultralytics>=8.4.175",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.0",
+]
